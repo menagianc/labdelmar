@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+
+/* Global text color */
+body, :where(body) *:not(button.bg-background-alternative.text-text-alternative) {
+  @apply text-neutral-900;
+}
+
+/* Exclude only black-filled buttons from the global text color */
+button.bg-background-alternative.text-text-alternative {
+  /* Gradient background from #027892 to #044a56 */
+  background: linear-gradient(75deg, #027892 0%, #044a56 100%);
+  /* Keep their intended text color */
+}
+
+@tailwind utilities;
+
+:root {
+  --background-very-light: #d0ebee;
+}
+
+.bg-very-light {
+  background-color: var(--background-very-light);
+}
+
+/* Make all headlines use #044a56 */
+h1, h2, h3, h4, h5, h6 {
+  color: #044a56 !important;
+}
