@@ -77,7 +77,7 @@ export function Navbar1() {
         <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
           <Link to="/">
             <img
-              src="/logo.svg"
+              src={`${import.meta.env.BASE_URL}logo.svg`}
               alt="Labmar Logo"
               className="h-10 w-auto"
             />

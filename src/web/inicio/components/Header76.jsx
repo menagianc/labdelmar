@@ -2,8 +2,12 @@
 
 import { Button } from "@relume_io/relume-ui";
 import React from "react";
-import slideshow90 from "../../../assets/header/slideshow-90.jpg";
-import slideshow100 from "../../../assets/header/slideshow-100.jpg";
+import slideshow1 from "../../../assets/header/slideshow-1.jpg";
+import slideshow2 from "../../../assets/header/slideshow-2.jpg";
+import slideshow3 from "../../../assets/header/slideshow-3.jpg";
+import slideshow4 from "../../../assets/header/slideshow-4.jpg";
+import slideshow5 from "../../../assets/header/slideshow-5.jpg";
+import slideshow6 from "../../../assets/header/slideshow-6.jpg";
 
 export function Header76() {
   return (
@@ -31,119 +35,36 @@ export function Header76() {
       <div className="h-[30rem] overflow-hidden pr-[5vw] pl-[5vw] md:h-[40rem] lg:h-screen lg:pl-0">
         <div className="grid w-full grid-cols-2 gap-x-4">
           <div className="-mt-[120%] grid size-full animate-loop-vertically columns-2 grid-cols-1 gap-4 self-center">
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
+            {[slideshow1, slideshow2, slideshow3, slideshow4, slideshow5, slideshow6].map((img, idx) => (
+              <div className="grid size-full grid-cols-1 gap-4" key={"first-col-"+idx}>
+                <div className="relative w-full pt-[120%]">
+                  <img
+                    className="absolute inset-0 size-full rounded-image object-cover"
+                    src={img}
+                    alt={`Slideshow ${idx+1}`}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
+            ))}
           </div>
           <div className="grid size-full animate-loop-vertically grid-cols-1 gap-4">
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
+            {[
+              slideshow6, slideshow1, slideshow2, slideshow3, slideshow4, slideshow5
+            ].map((img, idx) => (
+              <div className="grid size-full grid-cols-1 gap-4" key={"second-col-"+idx}>
+                <div className="relative w-full pt-[120%]">
+                  <img
+                    className="absolute inset-0 size-full rounded-image object-cover"
+                    src={img}
+                    alt={`Slideshow ${[6,1,2,3,4,5][idx]}`}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow90}
-                  alt="Slideshow 90"
-                />
-              </div>
-            </div>
-            <div className="grid size-full grid-cols-1 gap-4">
-              <div className="relative w-full pt-[120%]">
-                <img
-                  className="absolute inset-0 size-full rounded-image object-cover"
-                  src={slideshow100}
-                  alt="Slideshow 100"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
+
