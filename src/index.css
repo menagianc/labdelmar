@@ -11,12 +11,80 @@ button.bg-background-alternative.text-text-alternative {
   /* Gradient background from #027892 to #044a56 */
   background: linear-gradient(75deg, #027892 0%, #044a56 100%);
   /* Keep their intended text color */
+  /* Remove border */
+  border: none !important;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover state for gradient buttons */
+button.bg-background-alternative.text-text-alternative:hover {
+  filter: brightness(1.1);
+}
+
+/* Active/pressed state for gradient buttons */
+button.bg-background-alternative.text-text-alternative:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* Hover state for secondary buttons */
+button:not(.bg-background-alternative):hover {
+  background-color: rgba(4, 74, 86, 0.05);
+}
+
+/* Active/pressed state for secondary buttons */
+button:not(.bg-background-alternative):active {
+  transform: scale(0.98);
+  background-color: rgba(4, 74, 86, 0.1);
+}
+
+/* Remove focus outline for gradient buttons */
+button.border-border-primary.bg-background-alternative.text-text-alternative:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Add hover underline effect for navbar menu items */
+[data-component-name="Navbar1"] .menu-content a {
+  position: relative;
+  text-decoration: none;
+}
+
+[data-component-name="Navbar1"] .menu-content a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #044a56;
+  transition: width 0.3s ease;
+}
+
+[data-component-name="Navbar1"] .menu-content a:hover::after {
+  width: 100%;
 }
 
 @tailwind utilities;
 
 :root {
   --background-very-light: #d0ebee;
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+  
+  /* Gradient colors */
+  --gradient-background-start: #d0ebee;
+  --gradient-background-end: #d0ebee;
+  --first-color: 4, 74, 86;
+  --second-color: 2, 120, 146;
+  --third-color: 100, 220, 255;
+  --fourth-color: 208, 235, 238;
+  --fifth-color: 180, 230, 240;
+  --size: 80%;
+  --blending-value: soft-light;
 }
 
 .bg-very-light {
@@ -31,4 +99,101 @@ h1, h2, h3, h4, h5, h6 {
 /* Make all text and elements in the footer white */
 footer, footer * {
   color: #fff !important;
+}
+
+/* Background Gradient Animation Keyframes */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Gradient Background Animation Classes */
+.gradients-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(40px);
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.gradient-circle {
+  position: absolute;
+  mix-blend-mode: var(--blending-value);
+  width: var(--size);
+  height: var(--size);
+  top: calc(50% - var(--size)/2);
+  left: calc(50% - var(--size)/2);
+  transform-origin: center center;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.gradient-circle-1 {
+  background: radial-gradient(circle at center, rgba(var(--first-color), 0.8) 0, rgba(var(--first-color), 0) 50%) no-repeat;
+  animation: var(--animate-first);
+}
+
+.gradient-circle-2 {
+  background: radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0, rgba(var(--second-color), 0) 50%) no-repeat;
+  transform-origin: calc(50% - 400px);
+  animation: var(--animate-second);
+}
+
+.gradient-circle-3 {
+  background: radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0, rgba(var(--third-color), 0) 50%) no-repeat;
+  transform-origin: calc(50% + 400px);
+  animation: var(--animate-third);
+}
+
+.gradient-circle-4 {
+  background: radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0, rgba(var(--fourth-color), 0) 50%) no-repeat;
+  transform-origin: calc(50% - 200px);
+  animation: var(--animate-fourth);
+  opacity: 0.5;
+}
+
+.gradient-circle-5 {
+  background: radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0, rgba(var(--fifth-color), 0) 50%) no-repeat;
+  transform-origin: calc(50% - 800px) calc(50% + 800px);
+  animation: var(--animate-fifth);
+}
+
+.gradient-bg-section {
+  position: relative;
+  overflow: hidden;
 }

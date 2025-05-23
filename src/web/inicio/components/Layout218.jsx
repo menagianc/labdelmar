@@ -1,17 +1,26 @@
 "use client";
 
 import React from "react";
+import estadisticasImage from "../../../assets/section/estadisticas.jpg";
 
 export function Layout218() {
   return (
-    <section id="relume" className="bg-very-light px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
+    <section id="relume" className="bg-very-light px-[5%] py-16 md:py-24 lg:py-28 gradient-bg-section">
+      {/* Gradient Background Animation */}
+      <div className="gradients-container">
+        <div className="gradient-circle gradient-circle-1"></div>
+        <div className="gradient-circle gradient-circle-2"></div>
+        <div className="gradient-circle gradient-circle-3"></div>
+        <div className="gradient-circle gradient-circle-4"></div>
+        <div className="gradient-circle gradient-circle-5"></div>
+      </div>
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
           <div className="order-2 md:order-1">
             <img
-              src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
+              src={estadisticasImage}
               className="w-full rounded-image object-cover"
-              alt="Relume placeholder image"
+              alt="Estadísticas del laboratorio"
             />
           </div>
           <div className="order-1 md:order-2">

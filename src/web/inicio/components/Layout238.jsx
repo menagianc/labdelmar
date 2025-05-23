@@ -4,8 +4,16 @@ import React from "react";
 
 export function Layout238() {
   return (
-    <section id="relume" className="bg-very-light px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
+    <section id="relume" className="bg-very-light px-[5%] py-16 md:py-24 lg:py-28 gradient-bg-section">
+      {/* Gradient Background Animation */}
+      <div className="gradients-container">
+        <div className="gradient-circle gradient-circle-1"></div>
+        <div className="gradient-circle gradient-circle-2"></div>
+        <div className="gradient-circle gradient-circle-3"></div>
+        <div className="gradient-circle gradient-circle-4"></div>
+        <div className="gradient-circle gradient-circle-5"></div>
+      </div>
+      <div className="container relative z-10">
         <div className="rb-12 mb-12 text-center md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg">
             <h2 className="text-4xl leading-[1.2] font-bold md:text-5xl lg:text-6xl">
