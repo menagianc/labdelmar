@@ -162,9 +162,11 @@ export function Navbar1() {
             Contacto
           </Link>
           <div className="mt-6 flex flex-col items-center gap-4 lg:mt-0 lg:ml-4 lg:flex-row">
-            <Button title="Llamar" size="sm" className="w-full">
-              Llamar
-            </Button>
+            <a href="tel:7878588362" className="block md:hidden w-full">
+              <Button title="Llamar" size="sm" className="w-full">
+                Llamar
+              </Button>
+            </a>
           </div>
           </div>
         </motion.div>

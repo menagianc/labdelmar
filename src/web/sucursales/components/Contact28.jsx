@@ -14,6 +14,14 @@ export function Contact28() {
           <p className="md:text-md">
             Encuentra nuestras sucursales en Vega Baja y Manatí.
           </p>
+          <ul className="mt-4 space-y-2">
+            <li>
+              <strong>Vega Baja:</strong> <a href="tel:7878588362" className="text-blue-700 underline hover:text-blue-900">787-858-8362</a> - Ext. 1
+            </li>
+            <li>
+              <strong>Manatí:</strong> <a href="tel:7872218362" className="text-blue-700 underline hover:text-blue-900">787-221-8362</a> - Ext. 2
+            </li>
+          </ul>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@relume_io/relume-ui";
+import { Link } from "react-router-dom";
 import React from "react";
 import slideshow1 from "../../../assets/header/slideshow-1.jpg";
 import slideshow2 from "../../../assets/header/slideshow-2.jpg";
@@ -33,10 +34,14 @@ export function Header76() {
           domicilio en Vega Baja y Manatí.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
-          <Button title="Surcusales">Surcusales</Button>
-          <Button title="Llamar" variant="secondary">
-            Llamar
-          </Button>
+          <Link to="/sucursales">
+            <Button title="Surcusales">Surcusales</Button>
+          </Link>
+          <a href="tel:7878588362" className="block md:hidden">
+            <Button title="Llamar" variant="secondary">
+              Llamar
+            </Button>
+          </a>
         </div>
       </div>
       <div className="h-[30rem] overflow-hidden pr-[5vw] pl-[5vw] md:h-[40rem] lg:h-screen lg:pl-0">
