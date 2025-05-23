@@ -1,9 +1,18 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@relume_io/relume-ui";
-import React from "react";
+import React, { useState } from "react";
 
 export function Contact29() {
+  const [activeMap, setActiveMap] = useState(null);
+
+  const toggleMap = (mapId) => {
+    if (activeMap === mapId) {
+      setActiveMap(null); // Close the map if it's already open
+    } else {
+      setActiveMap(mapId); // Open the clicked map and close any other
+    }
+  };
+
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
@@ -13,100 +22,207 @@ export function Contact29() {
             Sucursales
           </h2>
           <p className="md:text-md">
-            Encuentra nuestras sucursales en Vega Baja y Manatí.
+            Encuentra nuestras sucursales en Vega Baja y Manatí. Contamos con cuatro ubicaciones para servirte mejor.
           </p>
         </div>
-        <Tabs
-          orientation="vertical"
-          className="relative grid auto-cols-fr grid-cols-1 gap-12 md:grid-cols-[.5fr_1fr] md:gap-y-16 lg:gap-x-20 lg:gap-y-16"
-        >
-          <TabsList className="relative grid h-full auto-cols-fr grid-cols-1 gap-x-4 gap-y-10">
-            <TabsTrigger
-              value="tab-1"
-              className="items-start justify-start border-0 border-l-2 border-border-primary border-transparent px-0 py-0 pl-8 data-[state=active]:border-black data-[state=active]:bg-background-primary data-[state=active]:text-text-primary"
+        <div className="flex flex-col gap-10">
+          {/* Location 1 */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div 
+              className="text-left p-6 cursor-pointer" 
+              onClick={() => toggleMap('map1')}
             >
-              <div className="text-left">
-                <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
-                  Vega Baja
-                </h3>
-                <p className="inline-block whitespace-normal">
-                  Calle Principal 123, Vega Baja, PR 00693
-                </p>
-                <div className="mt-5 font-semibold md:mt-6">
-                  <p>View Map</p>
-                </div>
+              <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                Laboratorio Clínico Del Mar I
+              </h3>
+              <p className="inline-block whitespace-normal">
+                Urb. San Demetrio, Núm. 6 Bloque 1, Vega Baja PR 00693
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Teléfono:</strong> 787-858-8362 Ext 1
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Horario:</strong><br />
+                Lunes a Viernes: 6:30 AM – 3:00 PM<br />
+                Sábado: 7:30 AM – 11:30 AM
+              </p>
+              <div className="mt-4 text-sm font-semibold text-[#044a56] flex items-center" data-component-name="Contact29">
+                {activeMap === 'map1' ? 'Ocultar Mapa' : 'Ver Mapa'}
+                <svg 
+                  className={`ml-2 w-5 h-5 transition-transform duration-300 ${activeMap === 'map1' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </div>
-            </TabsTrigger>
-            <TabsTrigger
-              value="tab-2"
-              className="items-start justify-start border-0 border-l-2 border-border-primary border-transparent px-0 py-0 pl-8 data-[state=active]:border-black data-[state=active]:bg-background-primary data-[state=active]:text-text-primary"
+            </div>
+            {activeMap === 'map1' && (
+              <div className="relative w-full h-[300px] transition-all duration-300 ease-in-out">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.699285379783!2d-66.40597912690791!3d18.483196346065327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c031712cfcf8c69%3A0x93f89fe66dc2b97f!2sDel%20Mar%20Clinical%20Laboratory!5e0!3m2!1sen!2spr!4v1747968276121!5m2!1sen!2spr" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa Laboratorio Clínico Del Mar I"
+                ></iframe>
+              </div>
+            )}
+          </div>
+
+          {/* Location 2 */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div 
+              className="text-left p-6 cursor-pointer" 
+              onClick={() => toggleMap('map2')}
             >
-              <div className="text-left">
-                <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
-                  Manatí
-                </h3>
-                <p className="inline-block whitespace-normal">
-                  Avenida Central 456, Manatí, PR 00674
-                </p>
-                <div className="mt-5 font-semibold md:mt-6">
-                  <p>View Map</p>
-                </div>
+              <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                Laboratorio Clínico Del Mar II
+              </h3>
+              <p className="inline-block whitespace-normal">
+                Carr. #2 km 42.3, Bo Algarrobo, Vega Baja PR 00693<br />
+                (4245 Carr. #2 Vega Baja PR 00693)
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Teléfono:</strong> 787-858-8362 Ext 2
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Horario:</strong><br />
+                Lunes a Viernes: 5:30 AM – 4:00 PM<br />
+                Sábado: 7:00 AM – 12:00 PM
+              </p>
+              <div className="mt-4 text-sm font-semibold text-[#044a56] flex items-center">
+                {activeMap === 'map2' ? 'Ocultar Mapa' : 'Ver Mapa'}
+                <svg 
+                  className={`ml-2 w-5 h-5 transition-transform duration-300 ${activeMap === 'map2' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </div>
-            </TabsTrigger>
-            <TabsTrigger
-              value="tab-3"
-              className="items-start justify-start border-0 border-l-2 border-border-primary border-transparent px-0 py-0 pl-8 data-[state=active]:border-black data-[state=active]:bg-background-primary data-[state=active]:text-text-primary"
+            </div>
+            {activeMap === 'map2' && (
+              <div className="relative w-full h-[300px] transition-all duration-300 ease-in-out">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1338.1722836320484!2d-66.42788126183277!3d18.441814690099765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c031701ba589c6d%3A0x234aba3d4ac7cdc3!2sLaboratorio%20Cl%C3%ADnico%20Del%20Mar%20II!5e0!3m2!1sen!2spr!4v1747968352646!5m2!1sen!2spr" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa Laboratorio Clínico Del Mar II"
+                ></iframe>
+              </div>
+            )}
+          </div>
+
+          {/* Location 3 */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div 
+              className="text-left p-6 cursor-pointer" 
+              onClick={() => toggleMap('map3')}
             >
-              <div className="text-left">
-                <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
-                  London
-                </h3>
-                <p className="inline-block whitespace-normal">
-                  123 Sample St, London W1C 1DE, United Kingdom
-                </p>
-                <div className="mt-5 font-semibold md:mt-6">
-                  <p>View Map</p>
-                </div>
+              <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                Laboratorio Clínico Del Mar III
+              </h3>
+              <p className="inline-block whitespace-normal">
+                Centro Comercial Plaza Puerta del Sol, Carr. #2 KM 50.2, Manatí PR 00674
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Teléfono:</strong> 787-858-8362 Ext 3
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Horario:</strong><br />
+                Lunes a Viernes: 6:30 AM – 3:00 PM<br />
+                Sábado: 7:00 AM – 11:30 AM
+              </p>
+              <div className="mt-4 text-sm font-semibold text-[#044a56] flex items-center">
+                {activeMap === 'map3' ? 'Ocultar Mapa' : 'Ver Mapa'}
+                <svg 
+                  className={`ml-2 w-5 h-5 transition-transform duration-300 ${activeMap === 'map3' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </div>
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent
-            value="tab-1"
-            className="data-[state=active]:animate-tabs"
-          >
-            <div className="relative size-full">
-              <img
-                src="https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-map-image.svg"
-                alt="Relume placeholder map image"
-                className="size-full object-cover"
-              />
             </div>
-          </TabsContent>
-          <TabsContent
-            value="tab-2"
-            className="data-[state=active]:animate-tabs"
-          >
-            <div className="relative size-full">
-              <img
-                src="https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-map-image.svg"
-                alt="Relume placeholder map image"
-                className="size-full object-cover"
-              />
+            {activeMap === 'map3' && (
+              <div className="relative w-full h-[300px] transition-all duration-300 ease-in-out">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d281.33428255838555!2d-66.49330320155946!3d18.430687246212123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0319efa20e0e29%3A0x6826e34e3ce01ed8!2sLaboratorio%20del%20Mar!5e0!3m2!1sen!2spr!4v1747968311539!5m2!1sen!2spr" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa Laboratorio Clínico Del Mar III"
+                ></iframe>
+              </div>
+            )}
+          </div>
+
+          {/* Location 4 */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div 
+              className="text-left p-6 cursor-pointer" 
+              onClick={() => toggleMap('map4')}
+            >
+              <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                Laboratorio Clínico Del Mar IV
+              </h3>
+              <p className="inline-block whitespace-normal">
+                Urb. Monte Carlo, Calle Marginal 113, Vega Baja PR 00693
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Teléfono:</strong> 787-858-8362 Ext 4
+              </p>
+              <p className="mt-2 text-sm">
+                <strong>Horario:</strong><br />
+                Lunes a Viernes: 6:00 AM – 3:00 PM<br />
+                Sábado: 7:30 AM – 11:30 AM
+              </p>
+              <div className="mt-4 text-sm font-semibold text-[#044a56] flex items-center">
+                {activeMap === 'map4' ? 'Ocultar Mapa' : 'Ver Mapa'}
+                <svg 
+                  className={`ml-2 w-5 h-5 transition-transform duration-300 ${activeMap === 'map4' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
             </div>
-          </TabsContent>
-          <TabsContent
-            value="tab-3"
-            className="data-[state=active]:animate-tabs"
-          >
-            <div className="relative size-full">
-              <img
-                src="https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-map-image.svg"
-                alt="Relume placeholder map image"
-                className="size-full object-cover"
-              />
-            </div>
-          </TabsContent>
-        </Tabs>
+            {activeMap === 'map4' && (
+              <div className="relative w-full h-[300px] transition-all duration-300 ease-in-out">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d946.2036425259821!2d-66.3952792895134!3d18.446726517205864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0317092bfe1849%3A0x2f254ebef566bdb0!2sLaboratorio%20Cl%C3%ADnico%20Del%20Mar%204!5e0!3m2!1sen!2spr!4v1747968435718!5m2!1sen!2spr" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa Laboratorio Clínico Del Mar IV"
+                ></iframe>
+              </div>
+            )}  
+          </div>
+        </div>
       </div>
     </section>
   );
