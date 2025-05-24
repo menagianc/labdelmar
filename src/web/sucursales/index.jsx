@@ -1,12 +1,12 @@
 import React from "react";
-import { Header46 } from "./components/Header46";
-import { Contact28 } from "./components/Contact28";
+import { LabLocations } from "./components/LabLocations";
+import { Title } from "../../components/Title";
 
 export default function Page() {
   return (
     <div>
-      <Header46 />
-      <Contact28 />
+      <Title title="Sucursales" />
+      <LabLocations />
     </div>
   );
 }

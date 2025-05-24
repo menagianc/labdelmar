@@ -5,10 +5,12 @@ import { Layout238 } from "./components/Layout238";
 import { Layout4 } from "./components/Layout4";
 import { Layout218 } from "./components/Layout218";
 import { Contact29 } from "./components/Contact29";
+import { Title } from "../../components/Title";
 
 export default function Page() {
   return (
     <div>
+      <Title title="Inicio" />
       <Header76 />
       <Logo3 />
       <Layout238 />

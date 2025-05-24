@@ -71,6 +71,7 @@ export function Navbar1() {
   return (
     <section
       id="relume"
+      data-component-name="Navbar1"
       className="z-[999] flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%]"
     >
       <div className="size-full lg:flex lg:items-center lg:justify-between">

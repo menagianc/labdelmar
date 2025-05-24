@@ -39,7 +39,10 @@ export function Contact29() {
                 Urb. San Demetrio, Núm. 6 Bloque 1, Vega Baja PR 00693
               </p>
               <p className="mt-2 text-sm">
-                <strong>Teléfono:</strong> 787-858-8362 Ext 1
+                <strong>Teléfono:</strong>{" "}
+                <a href="tel:7878588362" className="hover:underline">
+                  787-858-8362 - Ext. 1
+                </a>
               </p>
               <p className="mt-2 text-sm">
                 <strong>Horario:</strong><br />
@@ -89,7 +92,10 @@ export function Contact29() {
                 (4245 Carr. #2 Vega Baja PR 00693)
               </p>
               <p className="mt-2 text-sm">
-                <strong>Teléfono:</strong> 787-858-8362 Ext 2
+                <strong>Teléfono:</strong>{" "}
+                <a href="tel:7878588362" className="hover:underline">
+                  787-858-8362 - Ext. 2
+                </a>
               </p>
               <p className="mt-2 text-sm">
                 <strong>Horario:</strong><br />
@@ -138,7 +144,10 @@ export function Contact29() {
                 Centro Comercial Plaza Puerta del Sol, Carr. #2 KM 50.2, Manatí PR 00674
               </p>
               <p className="mt-2 text-sm">
-                <strong>Teléfono:</strong> 787-858-8362 Ext 3
+                <strong>Teléfono:</strong>{" "}
+                <a href="tel:7878588362" className="hover:underline">
+                  787-858-8362 - Ext. 3
+                </a>
               </p>
               <p className="mt-2 text-sm">
                 <strong>Horario:</strong><br />
@@ -187,7 +196,10 @@ export function Contact29() {
                 Urb. Monte Carlo, Calle Marginal 113, Vega Baja PR 00693
               </p>
               <p className="mt-2 text-sm">
-                <strong>Teléfono:</strong> 787-858-8362 Ext 4
+                <strong>Teléfono:</strong>{" "}
+                <a href="tel:7878588362" className="hover:underline">
+                  787-858-8362 - Ext. 4
+                </a>
               </p>
               <p className="mt-2 text-sm">
                 <strong>Horario:</strong><br />
