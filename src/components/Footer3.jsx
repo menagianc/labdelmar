@@ -7,6 +7,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { Link } from "react-router-dom";
+// Using import.meta.env.BASE_URL to respect the base path in vite.config.js
 
 // Add this style block to ensure white underline and text for footer links
 const footerUnderlineStyle = `
@@ -49,7 +50,7 @@ export function Footer3() {
       <div className="container">
         {/* Logo inside the container, above the grid */}
         <div className="mb-4">
-          <img src="/labdelmar/FooterLogo.svg" alt="Logo image" style={{ width: '90px', height: 'auto' }} />
+          <img src={`${import.meta.env.BASE_URL}FooterLogo.svg`} alt="Logo image" style={{ width: '90px', height: 'auto' }} />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10 pb-12">
           {/* LEFT SIDE: Address, Contact, Socials */}

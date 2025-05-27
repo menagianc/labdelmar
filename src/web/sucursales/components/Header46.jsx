@@ -3,6 +3,8 @@
 import { Button } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
+import vegaBajaImage from "../../../assets/labs/lab-1-3.jpg";
+import manatiImage from "../../../assets/labs/lab-3-3.jpg";
 
 export function Header46() {
   return (
@@ -23,7 +25,7 @@ export function Header46() {
           <div className="flex flex-col items-start justify-start text-left">
             <div className="mb-6 aspect-[3/2] md:mb-8">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
+                src={vegaBajaImage}
                 className="h-full w-full rounded-image object-cover"
                 alt="Sucursal Vega Baja"
               />
@@ -46,7 +48,7 @@ export function Header46() {
           <div className="flex flex-col items-start justify-start text-left">
             <div className="mb-6 aspect-[3/2] md:mb-8">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
+                src={manatiImage}
                 className="h-full w-full rounded-image object-cover"
                 alt="Sucursal Manatí"
               />

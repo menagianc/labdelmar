@@ -2,7 +2,7 @@
 @tailwind components;
 
 /* Global text color */
-body, :where(body) *:not(button.bg-background-alternative.text-text-alternative) {
+body, :where(body) *:not(button.bg-background-alternative.text-text-alternative, svg, [class*='react-icons']) {
   @apply text-neutral-900;
 }
 

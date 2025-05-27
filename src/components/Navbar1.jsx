@@ -4,6 +4,7 @@ import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import { motion } from "framer-motion";
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+// Using import.meta.env.BASE_URL to respect the base path in vite.config.js
 
 const useRelume = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

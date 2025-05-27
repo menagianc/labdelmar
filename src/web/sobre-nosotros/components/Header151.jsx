@@ -2,7 +2,9 @@
 
 import { VideoIframe } from "@relume_io/relume-ui";
 import React from "react";
+import youtubeFrame from "../../../assets/teams/youtube_frame.png";
 import { FaCirclePlay } from "react-icons/fa6";
+
 
 export function Header151() {
   const [playVideo, setPlayVideo] = React.useState(false);
@@ -37,7 +39,7 @@ export function Header151() {
             onClick={() => setPlayVideo(true)}
           >
             <img
-              src="https://img.youtube.com/vi/BXoryZQR5pI/maxresdefault.jpg"
+              src={youtubeFrame}
               alt="YouTube video thumbnail"
               className="aspect-video size-full object-cover"
             />

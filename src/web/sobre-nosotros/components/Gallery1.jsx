@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import galleryImage from "../../../assets/labs/lab-3-4.jpg";
 
 export function Gallery1() {
   return (
@@ -18,8 +19,8 @@ export function Gallery1() {
           <a href="#" className="size-full">
             <div className="w-full overflow-hidden">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
-                alt="Relume placeholder image 1"
+                src={galleryImage}
+                alt="Instalaciones del Laboratorio"
                 className="aspect-video size-full rounded-image object-cover"
               />
             </div>
