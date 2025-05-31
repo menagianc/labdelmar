@@ -2,9 +2,10 @@
 
 import { VideoIframe } from "@relume_io/relume-ui";
 import React from "react";
-import youtubeFrame from "../../../assets/teams/youtube_frame.png";
 import { FaCirclePlay } from "react-icons/fa6";
 
+// Direct import
+import youtubeFrame from "../../../assets/teams/youtube_frame.png";
 
 export function Header151() {
   const [playVideo, setPlayVideo] = React.useState(false);
@@ -28,23 +29,50 @@ export function Header151() {
           </div>
         </div>
       </div>
-      <div className="relative flex size-full items-center justify-center max-w-3xl mx-auto">
+      <div className="relative max-w-3xl mx-auto">
         {playVideo ? (
           <VideoIframe video="https://www.youtube.com/embed/BXoryZQR5pI?autoplay=1" />
         ) : (
           <button
-            className="relative flex size-full items-center justify-center w-full"
+            className="relative w-full block bg-transparent"
             style={{ outline: "none" }}
             aria-label="Play video"
             onClick={() => setPlayVideo(true)}
           >
-            <img
-              src={youtubeFrame}
-              alt="YouTube video thumbnail"
-              className="aspect-video size-full object-cover"
-            />
-            <span className="absolute inset-0 z-10 bg-black/20" />
-            <FaCirclePlay className="absolute z-20 size-16 text-white" />
+            {/* Thumbnail container */}
+            <div className="relative">
+              {/* Force image display with inline styles */}
+              <img
+                src={youtubeFrame}
+                alt="YouTube video thumbnail"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                  visibility: "visible",
+                  backgroundColor: "transparent"
+                }}
+              />
+              {/* Overlay */}
+              <div 
+                className="absolute inset-0" 
+                style={{ backgroundColor: "rgba(0,0,0,0.2)", zIndex: 10 }}
+              ></div>
+              {/* Play button */}
+              <FaCirclePlay 
+                style={{ 
+                  position: "absolute", 
+                  top: "50%", 
+                  left: "50%", 
+                  transform: "translate(-50%, -50%)", 
+                  zIndex: 20,
+                  width: "4rem",
+                  height: "4rem",
+                  color: "white"
+                }} 
+              />
+            </div>
           </button>
         )}
       </div>

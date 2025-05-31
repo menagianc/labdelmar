@@ -32,7 +32,7 @@ export function Logo3() {
     { src: triplesLogo, alt: "Triple-S logo" }
   ];
   return (
-    <section id="relume" className="overflow-hidden py-12 md:py-16 lg:py-20">
+    <section id="relume" className="bg-very-light overflow-hidden py-12 md:py-16 lg:py-20" data-component-name="Logo3">
       <div className="container mb-8 w-full max-w-lg px-[5%] md:mb-10 lg:mb-12">
         <h1 className="text-center text-base leading-[1.2] font-bold md:text-md md:leading-[1.2]">
           Aceptamos la gran mayoría de los planes médicos

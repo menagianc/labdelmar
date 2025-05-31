@@ -2,16 +2,15 @@
 @tailwind components;
 
 /* Global text color */
-body, :where(body) *:not(button.bg-background-alternative.text-text-alternative, svg, [class*='react-icons']) {
-  @apply text-neutral-900;
+body, :where(body) *:not(button.bg-background-alternative.text-text-alternative, svg, [class*='react-icons'], .bg-very-light, .bg-very-light *) {
+  color: var(--text-main);
+  background-color: var(--background-main);
 }
 
 /* Exclude only black-filled buttons from the global text color */
 button.bg-background-alternative.text-text-alternative {
-  /* Gradient background from #027892 to #044a56 */
-  background: linear-gradient(75deg, #027892 0%, #044a56 100%);
-  /* Keep their intended text color */
-  /* Remove border */
+  background: linear-gradient(75deg, #027892 0%, #42CFB5 100%);
+  color: #fff;
   border: none !important;
   transition: filter 0.2s ease, transform 0.1s ease;
 }
@@ -29,19 +28,43 @@ button.bg-background-alternative.text-text-alternative:active {
 
 /* Hover state for secondary buttons */
 button:not(.bg-background-alternative):hover {
-  background-color: rgba(4, 74, 86, 0.05);
+  background-color: #027892;
+  color: #fff;
 }
+/* Custom hover for "Llamar" button handled above */
 
 /* Active/pressed state for secondary buttons */
 button:not(.bg-background-alternative):active {
   transform: scale(0.98);
-  background-color: rgba(4, 74, 86, 0.1);
+  background-color: #1E2A46;
+  color: #fff;
 }
 
 /* Remove focus outline for gradient buttons */
 button.border-border-primary.bg-background-alternative.text-text-alternative:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* Add your custom styles below this line */
+
+.border-border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+/* Override Relume UI Button border color */
+[data-component-name="Navbar1"] button[title="Llamar"],
+button[title="Llamar"] {
+  border-color: white !important;
+}
+
+/* Custom hover for "Llamar" button: turquoise bg, no border */
+[data-component-name="Navbar1"] button[title="Llamar"]:hover,
+button[title="Llamar"]:hover {
+  background-color: #42CFB5 !important;
+  border-color: transparent !important;
+  color: #1E2A46 !important;
 }
 
 /* Add hover underline effect for navbar menu items */
@@ -57,7 +80,7 @@ button.border-border-primary.bg-background-alternative.text-text-alternative:foc
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #044a56;
+  background-color: #027892;
   transition: width 0.3s ease;
 }
 
@@ -88,32 +111,79 @@ button.border-border-primary.bg-background-alternative.text-text-alternative:foc
 
 
 :root {
-  --background-very-light: #d0ebee;
-  --animate-first: moveVertical 30s ease infinite;
-  --animate-second: moveInCircle 20s reverse infinite;
-  --animate-third: moveInCircle 40s linear infinite;
-  --animate-fourth: moveHorizontal 40s ease infinite;
-  --animate-fifth: moveInCircle 20s ease infinite;
-  
-  /* Gradient colors */
-  --gradient-background-start: #d0ebee;
-  --gradient-background-end: #d0ebee;
-  --first-color: 4, 74, 86;
-  --second-color: 2, 120, 146;
-  --third-color: 100, 220, 255;
-  --fourth-color: 208, 235, 238;
-  --fifth-color: 180, 230, 240;
-  --size: 80%;
-  --blending-value: soft-light;
+  --background-main: #1E2A46;
+  --background-accent: #027892;
+  --text-main: #fff;
+  --text-accent: #027892;
 }
 
+
+/* Reusable class for white sections with proper text styling */
 .bg-very-light {
-  background-color: var(--background-very-light);
+  background-color: #fff !important;
 }
 
-/* Make all headlines use #044a56 */
-h1, h2, h3, h4, h5, h6 {
-  color: #044a56 !important;
+.bg-very-light, .bg-very-light > * {
+  background-color: #fff !important;
+  color: #1E2A46 !important;
+}
+
+/* This rule is now handled by the combined selector above */
+
+.bg-very-light svg {
+  color: rgba(17, 31, 106, 0.8) !important;
+}
+
+
+
+.bg-blue-section {
+  background-color: var(--background-main) !important;
+  color: #fff !important;
+}
+.bg-main {
+  background-color: var(--background-main);
+}
+.bg-accent {
+  background-color: var(--background-accent);
+}
+.text-accent {
+  color: var(--text-accent);
+}
+
+/* Utility class for white background with dark text */
+.bg-white-section {
+  background: #fff !important;
+  color: #1E2A46 !important;
+}
+
+/* Apply dark blue background to Layout238 and Layout218 globally */
+[data-component-name="Layout238"],
+[data-component-name="Layout218"] {
+  background: var(--background-main) !important;
+  color: var(--text-main) !important;
+}
+[data-component-name="Layout238"] *:not(h1, h2, h3, h4, h5, h6),
+[data-component-name="Layout218"] *:not(h1, h2, h3, h4, h5, h6) {
+  background: transparent !important;
+  color: var(--text-main) !important;
+}
+
+
+/* Headlines in light backgrounds */
+.bg-very-light h1, .bg-very-light h2, .bg-very-light h3, 
+.bg-very-light h4, .bg-very-light h5, .bg-very-light h6,
+.bg-white-section h1, .bg-white-section h2, .bg-white-section h3,
+.bg-white-section h4, .bg-white-section h5, .bg-white-section h6 {
+  color: #027892 !important;
+}
+
+/* Headlines in dark backgrounds */
+h1, h2, h3, h4, h5, h6,
+[data-component-name="Layout238"] h1, [data-component-name="Layout238"] h2, [data-component-name="Layout238"] h3,
+[data-component-name="Layout238"] h4, [data-component-name="Layout238"] h5, [data-component-name="Layout238"] h6,
+[data-component-name="Layout218"] h1, [data-component-name="Layout218"] h2, [data-component-name="Layout218"] h3,
+[data-component-name="Layout218"] h4, [data-component-name="Layout218"] h5, [data-component-name="Layout218"] h6 {
+  color: #42CFB5 !important;
 }
 
 /* Make all text and elements in the footer white */
@@ -121,99 +191,28 @@ footer, footer * {
   color: #fff !important;
 }
 
-/* Background Gradient Animation Keyframes */
-@keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
-  }
+/* Utility class for white background with dark text */
+.bg-white-section {
+  background: #fff !important;
+  color: #1E2A46 !important;
 }
 
-@keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Apply dark blue background to Layout238 and Layout218 globally */
+[data-component-name="Layout238"],
+[data-component-name="Layout218"] {
+  background: var(--background-main) !important;
+  color: var(--text-main) !important;
 }
 
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+:root {
+  --background-main: #1E2A46;
+  --text-main: #fff;
 }
 
-/* Gradient Background Animation Classes */
-.gradients-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  filter: blur(40px);
-  overflow: hidden;
-  z-index: 0;
-  opacity: 0.7;
+.bg-main {
+  background-color: var(--background-main);
 }
 
-.gradient-circle {
-  position: absolute;
-  mix-blend-mode: var(--blending-value);
-  width: var(--size);
-  height: var(--size);
-  top: calc(50% - var(--size)/2);
-  left: calc(50% - var(--size)/2);
-  transform-origin: center center;
-  opacity: 0.7;
-  border-radius: 50%;
-}
-
-.gradient-circle-1 {
-  background: radial-gradient(circle at center, rgba(var(--first-color), 0.8) 0, rgba(var(--first-color), 0) 50%) no-repeat;
-  animation: var(--animate-first);
-}
-
-.gradient-circle-2 {
-  background: radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0, rgba(var(--second-color), 0) 50%) no-repeat;
-  transform-origin: calc(50% - 400px);
-  animation: var(--animate-second);
-}
-
-.gradient-circle-3 {
-  background: radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0, rgba(var(--third-color), 0) 50%) no-repeat;
-  transform-origin: calc(50% + 400px);
-  animation: var(--animate-third);
-}
-
-.gradient-circle-4 {
-  background: radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0, rgba(var(--fourth-color), 0) 50%) no-repeat;
-  transform-origin: calc(50% - 200px);
-  animation: var(--animate-fourth);
-  opacity: 0.5;
-}
-
-.gradient-circle-5 {
-  background: radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0, rgba(var(--fifth-color), 0) 50%) no-repeat;
-  transform-origin: calc(50% - 800px) calc(50% + 800px);
-  animation: var(--animate-fifth);
-}
-
-.gradient-bg-section {
-  position: relative;
-  overflow: hidden;
+.text-accent {
+  color: #027892;
 }

@@ -73,7 +73,7 @@ export function Navbar1() {
     <section
       id="relume"
       data-component-name="Navbar1"
-      className="z-[999] flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%]"
+      className="z-[999] flex w-full items-center border-b border-white bg-background-primary lg:min-h-18 lg:px-[5%]"
     >
       <div className="size-full lg:flex lg:items-center lg:justify-between">
         <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
@@ -85,11 +85,14 @@ export function Navbar1() {
             />
           </Link>
           <button
-            className="-mr-2 flex size-12 flex-col items-center justify-center lg:hidden"
+            className="-mr-2 flex size-12 flex-col items-center justify-center lg:hidden relative group"
             onClick={useActive.toggleMobileMenu}
+            aria-label="Toggle menu"
           >
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:bg-[#42CFB5] group-active:bg-[#42CFB5] transition-opacity pointer-events-none"></span>
             <motion.span
-              className="my-[3px] h-0.5 w-6 bg-black"
+              className="my-[3px] h-0.5 w-6 z-10"
+              style={{ backgroundColor: '#fff' }}
               animate={useActive.animateMobileMenuButtonSpan}
               variants={{
                 open: { translateY: 8, transition: { delay: 0.1 } },
@@ -102,7 +105,8 @@ export function Navbar1() {
               }}
             />
             <motion.span
-              className="my-[3px] h-0.5 w-6 bg-black"
+              className="my-[3px] h-0.5 w-6 z-10"
+              style={{ backgroundColor: '#fff' }}
               animate={useActive.animateMobileMenu}
               variants={{
                 open: { width: 0, transition: { duration: 0.1 } },
@@ -113,7 +117,8 @@ export function Navbar1() {
               }}
             />
             <motion.span
-              className="my-[3px] h-0.5 w-6 bg-black"
+              className="my-[3px] h-0.5 w-6 z-10"
+              style={{ backgroundColor: '#fff' }}
               animate={useActive.animateMobileMenuButtonSpan}
               variants={{
                 open: { translateY: -8, transition: { delay: 0.1 } },

@@ -4,7 +4,6 @@ import React from "react";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
-  BiLogoYoutube,
 } from "react-icons/bi";
 import { Link } from "react-router-dom";
 // Using import.meta.env.BASE_URL to respect the base path in vite.config.js
@@ -45,7 +44,7 @@ const footerUnderlineStyle = `
 
 export function Footer3() {
   return (
-    <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20" style={{ backgroundColor: '#044a56' }}>
+    <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20">
       <style>{footerUnderlineStyle}</style>
       <div className="container">
         {/* Logo inside the container, above the grid */}
