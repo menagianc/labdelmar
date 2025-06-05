@@ -8,18 +8,9 @@ import contactImage from "../../../assets/labs/lab-1-4.jpg";
 
 export function Contact13() {
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="section section-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
-        <div className="rb-12 mb-12 max-w-lg md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">Contacto</p>
-          <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            Contáctanos
-          </h2>
-          <p className="md:text-md">
-            Estamos aquí para ayudarte con tus consultas.
-          </p>
-        </div>
-        <div className="grid auto-cols-fr grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-2 md:gap-x-20 md:gap-y-16 lg:grid-cols-[0.5fr_1fr]">
+        <div className="flex flex-col gap-y-10 max-w-2xl mx-auto">
           <div className="grid auto-cols-fr grid-cols-1 gap-x-4 gap-y-10">
             <div>
               <div className="mb-3 md:mb-4">
@@ -29,7 +20,7 @@ export function Contact13() {
                 Correo
               </h3>
               <p className="mb-2">Escríbenos a nuestro email</p>
-              <a className="underline" href="#">
+              <a className="contact-link" href="mailto:hello@relume.io">
                 hello@relume.io
               </a>
             </div>
@@ -41,8 +32,8 @@ export function Contact13() {
                 Teléfono
               </h3>
               <p className="mb-2">Llámanos para más información</p>
-              <a className="underline" href="#">
-                +1 (555) 123-4567
+              <a className="contact-link" href="tel:+17878588362">
+                +1 787 858 8362
               </a>
             </div>
             <div>
@@ -59,18 +50,12 @@ export function Contact13() {
                   variant="link"
                   size="link"
                   iconRight={<RxChevronRight />}
+                  onClick={() => window.open('https://www.google.com/maps/search/Laboratorio+Clinico+Del+Mar/@18.441815,-66.427881,15z/data=!3m1!4b1?entry=ttu', '_blank')}
                 >
                   Obtener Direcciones
                 </Button>
               </div>
             </div>
-          </div>
-          <div>
-            <img
-              src={contactImage}
-              alt="Laboratorio Clínico Del Mar"
-              className="size-full rounded-image object-cover"
-            />
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export function Contact29() {
   };
 
   return (
-    <section id="relume" className="bg-very-light text-[#1E2A46] px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="section section-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 flex max-w-lg flex-col justify-start md:mb-18 lg:mb-20">
           <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl text-accent">

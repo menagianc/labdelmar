@@ -5,7 +5,7 @@ import resultadosImage from "../../../assets/section/resultados.jpg";
 
 export function Layout4() {
   return (
-    <section id="relume" className="bg-very-light text-[#1E2A46] px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="section section-dark text-[#1E2A46] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>

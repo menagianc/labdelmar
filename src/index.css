@@ -1,17 +1,76 @@
+/* =========== Tailwind Directives =========== */
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
-/* Global text color */
-body, :where(body) *:not(button.bg-background-alternative.text-text-alternative, svg, [class*='react-icons'], .bg-very-light, .bg-very-light *) {
+/* =========== Root Variables =========== */
+:root {
+  /* Primary color scheme */
+  --background-main: #1E2A46;
+  --background-accent: #027892;
+  --text-main: #fff;
+  --text-accent: #027892;
+  --accent-light: #42CFB5;
+  
+  /* Section background and text colors */
+  --section-dark-bg: var(--background-main);
+  --section-dark-text: var(--text-main);
+  --section-dark-heading: var(--accent-light);
+  
+  --section-light-bg: #fff;
+  --section-light-text: var(--background-main);
+  --section-light-heading: var(--background-accent);
+}
+
+/* =========== Global Styles =========== */
+body, :where(body) *:not(button.bg-background-alternative.text-text-alternative, svg, [class*='react-icons'], .bg-very-light, .bg-very-light *, .section-light, .section-light *, .section.section-light, .section.section-light *) {
   color: var(--text-main);
   background-color: var(--background-main);
 }
 
-/* Exclude only black-filled buttons from the global text color */
+/* Make all text and elements in the footer white */
+footer, footer * {
+  color: var(--text-main);
+}
+
+/* =========== Layout Components =========== */
+/* Dark blue background layouts */
+[data-component-name="Layout238"],
+[data-component-name="Layout218"] {
+  background: var(--background-main);
+  color: var(--text-main);
+}
+
+[data-component-name="Layout238"] *:not(h1, h2, h3, h4, h5, h6),
+[data-component-name="Layout218"] *:not(h1, h2, h3, h4, h5, h6) {
+  background: transparent;
+  color: var(--text-main);
+}
+
+/* =========== Typography =========== */
+/* Headlines in dark backgrounds */
+h1, h2, h3, h4, h5, h6,
+[data-component-name="Layout238"] h1, [data-component-name="Layout238"] h2, [data-component-name="Layout238"] h3,
+[data-component-name="Layout238"] h4, [data-component-name="Layout238"] h5, [data-component-name="Layout238"] h6,
+[data-component-name="Layout218"] h1, [data-component-name="Layout218"] h2, [data-component-name="Layout218"] h3,
+[data-component-name="Layout218"] h4, [data-component-name="Layout218"] h5, [data-component-name="Layout218"] h6 {
+  color: var(--section-dark-heading);
+}
+
+/* Headlines in light backgrounds */
+.bg-very-light h1, .bg-very-light h2, .bg-very-light h3, 
+.bg-very-light h4, .bg-very-light h5, .bg-very-light h6,
+.bg-white-section h1, .bg-white-section h2, .bg-white-section h3,
+.bg-white-section h4, .bg-white-section h5, .bg-white-section h6 {
+  color: var(--section-light-heading);
+}
+
+/* =========== Button Styles =========== */
+/* Gradient buttons */
 button.bg-background-alternative.text-text-alternative {
-  background: linear-gradient(75deg, #027892 0%, #42CFB5 100%);
-  color: #fff;
-  border: none !important;
+  background: linear-gradient(75deg, var(--background-accent) 0%, var(--accent-light) 100%);
+  color: var(--text-main);
+  border: none;
   transition: filter 0.2s ease, transform 0.1s ease;
 }
 
@@ -26,51 +85,50 @@ button.bg-background-alternative.text-text-alternative:active {
   filter: brightness(0.95);
 }
 
-/* Hover state for secondary buttons */
-button:not(.bg-background-alternative):hover {
-  background-color: #027892;
-  color: #fff;
-}
-/* Custom hover for "Llamar" button handled above */
-
-/* Active/pressed state for secondary buttons */
-button:not(.bg-background-alternative):active {
-  transform: scale(0.98);
-  background-color: #1E2A46;
-  color: #fff;
-}
-
 /* Remove focus outline for gradient buttons */
 button.border-border-primary.bg-background-alternative.text-text-alternative:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
-/* Add your custom styles below this line */
-
-.border-border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+/* Secondary buttons hover state */
+button:not(.bg-background-alternative):hover {
+  background-color: var(--background-accent);
+  color: var(--text-main);
 }
 
+/* Secondary buttons active state */
+button:not(.bg-background-alternative):active {
+  transform: scale(0.98);
+  background-color: var(--background-main);
+  color: var(--text-main);
+}
+
+/* =========== Navbar Styles =========== */
 /* Override Relume UI Button border color */
 [data-component-name="Navbar1"] button[title="Llamar"],
 button[title="Llamar"] {
-  border-color: white !important;
+  border-color: white;
 }
 
 /* Custom hover for "Llamar" button: turquoise bg, no border */
 [data-component-name="Navbar1"] button[title="Llamar"]:hover,
 button[title="Llamar"]:hover {
-  background-color: #42CFB5 !important;
-  border-color: transparent !important;
-  color: #1E2A46 !important;
+  background-color: var(--accent-light);
+  border-color: transparent;
+  color: var(--background-main);
 }
 
-/* Add hover underline effect for navbar menu items */
-[data-component-name="Navbar1"] .menu-content a {
+/* Add hover underline effect for navbar menu items (except the 'Llamar' button) */
+[data-component-name="Navbar1"] .menu-content a:not([href="tel:7878588362"]) {
   position: relative;
   text-decoration: none;
+}
+
+/* Explicitly disable underline and animations for the 'Llamar' button's anchor */
+[data-component-name="Navbar1"] a[href="tel:7878588362"] {
+  text-decoration: none;
+  position: static;
 }
 
 [data-component-name="Navbar1"] .menu-content a::after {
@@ -80,7 +138,7 @@ button[title="Llamar"]:hover {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #027892;
+  background-color: var(--background-accent);
   transition: width 0.3s ease;
 }
 
@@ -88,13 +146,13 @@ button[title="Llamar"]:hover {
   width: 100%;
 }
 
-@tailwind utilities;
-
+/* =========== Footer Styles =========== */
 /* Footer white underline animation */
 .footer-underline {
   position: relative;
   text-decoration: none;
 }
+
 .footer-underline::after {
   content: '';
   position: absolute;
@@ -105,114 +163,162 @@ button[title="Llamar"]:hover {
   background-color: #fff;
   transition: width 0.3s ease;
 }
+
 .footer-underline:hover::after {
   width: 100%;
 }
 
-
-:root {
-  --background-main: #1E2A46;
-  --background-accent: #027892;
-  --text-main: #fff;
-  --text-accent: #027892;
+/* =========== Contact Link Styles =========== */
+/* Contact link underline animation with section-light-heading color */
+.contact-link {
+  position: relative;
+  text-decoration: none;
 }
 
+.contact-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--section-light-heading);
+  transition: width 0.3s ease;
+}
 
-/* Reusable class for white sections with proper text styling */
+.contact-link:hover::after {
+  width: 100%;
+}
+
+/* =========== Utility Classes =========== */
+/* Border utilities */
+.border-border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+/* =========== Section Styling System =========== */
+/* Base section class with common properties */
+.section {
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* We're removing the default padding to preserve component padding */
+}
+
+/* Dark sections */
+.section-dark {
+  background-color: var(--section-dark-bg);
+  color: var(--section-dark-text);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark h5,
+.section-dark h6,
+section.section-dark h1,
+section.section-dark h2,
+section.section-dark h3,
+section.section-dark h4,
+section.section-dark h5,
+section.section-dark h6 {
+  color: var(--section-dark-heading) !important;
+}
+
+.section-dark a:not(.footer-underline):not(.nav-link) {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-decoration-color: rgba(66, 207, 181, 0.5);
+  transition: text-decoration-color 0.3s ease;
+}
+
+.section-dark a:hover:not(.footer-underline):not(.nav-link) {
+  text-decoration-color: rgba(66, 207, 181, 1);
+}
+
+/* Light sections */
+.section-light {
+  background-color: var(--section-light-bg);
+  color: var(--section-light-text);
+}
+
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section-light h4,
+.section-light h5,
+.section-light h6,
+section.section-light h1,
+section.section-light h2,
+section.section-light h3,
+section.section-light h4,
+section.section-light h5,
+section.section-light h6 {
+  color: var(--section-light-heading) !important;
+}
+
+.section-light a:not(.footer-underline):not(.nav-link) {
+  color: var(--background-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(2, 120, 146, 0.5);
+  transition: text-decoration-color 0.3s ease;
+}
+
+.section-light a:hover:not(.footer-underline):not(.nav-link) {
+  text-decoration-color: rgba(2, 120, 146, 1);
+}
+
+/* Legacy classes - maintain backward compatibility */
 .bg-very-light {
-  background-color: #fff !important;
+  background-color: var(--section-light-bg);
+  color: var(--section-light-text);
 }
 
-.bg-very-light, .bg-very-light > * {
-  background-color: #fff !important;
-  color: #1E2A46 !important;
+.bg-very-light > * {
+  background-color: var(--section-light-bg);
+  color: var(--section-light-text);
 }
-
-/* This rule is now handled by the combined selector above */
 
 .bg-very-light svg {
-  color: rgba(17, 31, 106, 0.8) !important;
+  color: rgba(17, 31, 106, 0.8);
 }
-
-
 
 .bg-blue-section {
-  background-color: var(--background-main) !important;
-  color: #fff !important;
+  background-color: var(--section-dark-bg);
+  color: var(--section-dark-text);
 }
+
+.bg-white-section {
+  background: var(--section-light-bg);
+  color: var(--section-light-text);
+}
+
 .bg-main {
   background-color: var(--background-main);
 }
+
 .bg-accent {
   background-color: var(--background-accent);
 }
+
 .text-accent {
   color: var(--text-accent);
 }
 
-/* Utility class for white background with dark text */
-.bg-white-section {
-  background: #fff !important;
-  color: #1E2A46 !important;
+/* Fix for button border, text and focus color */
+.border-border-primary {
+  border-color: var(--section-light-heading) !important;
 }
 
-/* Apply dark blue background to Layout238 and Layout218 globally */
-[data-component-name="Layout238"],
-[data-component-name="Layout218"] {
-  background: var(--background-main) !important;
-  color: var(--text-main) !important;
-}
-[data-component-name="Layout238"] *:not(h1, h2, h3, h4, h5, h6),
-[data-component-name="Layout218"] *:not(h1, h2, h3, h4, h5, h6) {
-  background: transparent !important;
-  color: var(--text-main) !important;
+button.text-text-primary:not(:hover) {
+  color: var(--section-light-heading) !important;
 }
 
-
-/* Headlines in light backgrounds */
-.bg-very-light h1, .bg-very-light h2, .bg-very-light h3, 
-.bg-very-light h4, .bg-very-light h5, .bg-very-light h6,
-.bg-white-section h1, .bg-white-section h2, .bg-white-section h3,
-.bg-white-section h4, .bg-white-section h5, .bg-white-section h6 {
-  color: #027892 !important;
+button.text-text-primary:hover {
+  color: white !important;
 }
 
-/* Headlines in dark backgrounds */
-h1, h2, h3, h4, h5, h6,
-[data-component-name="Layout238"] h1, [data-component-name="Layout238"] h2, [data-component-name="Layout238"] h3,
-[data-component-name="Layout238"] h4, [data-component-name="Layout238"] h5, [data-component-name="Layout238"] h6,
-[data-component-name="Layout218"] h1, [data-component-name="Layout218"] h2, [data-component-name="Layout218"] h3,
-[data-component-name="Layout218"] h4, [data-component-name="Layout218"] h5, [data-component-name="Layout218"] h6 {
-  color: #42CFB5 !important;
-}
-
-/* Make all text and elements in the footer white */
-footer, footer * {
-  color: #fff !important;
-}
-
-/* Utility class for white background with dark text */
-.bg-white-section {
-  background: #fff !important;
-  color: #1E2A46 !important;
-}
-
-/* Apply dark blue background to Layout238 and Layout218 globally */
-[data-component-name="Layout238"],
-[data-component-name="Layout218"] {
-  background: var(--background-main) !important;
-  color: var(--text-main) !important;
-}
-
-:root {
-  --background-main: #1E2A46;
-  --text-main: #fff;
-}
-
-.bg-main {
-  background-color: var(--background-main);
-}
-
-.text-accent {
-  color: #027892;
+button.focus-visible\:ring-border-primary:focus-visible {
+  --tw-ring-color: var(--section-light-heading) !important;
 }

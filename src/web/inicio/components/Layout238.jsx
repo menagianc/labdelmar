@@ -7,12 +7,11 @@ import { FaVirusCovid } from "react-icons/fa6";
 
 export function Layout238() {
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-
+    <section id="relume" className="section section-dark px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container relative z-10">
         <div className="rb-12 mb-12 text-center md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg">
-            <h2 className="text-4xl leading-[1.2] font-bold md:text-5xl lg:text-6xl text-accent">
+            <h2 className="text-4xl leading-[1.2] font-bold md:text-5xl lg:text-6xl">
               Servicios de salud a tu alcance para tu tranquilidad y bienestar.
             </h2>
           </div>
@@ -22,7 +21,7 @@ export function Layout238() {
             <div className="mb-5 md:mb-6">
               <LuTestTubeDiagonal className="size-12" color="#111f6acc" aria-label="Pruebas Regulares" />
             </div>
-            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl text-accent">
+            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl">
               Pruebas Regulares
             </h3>
             <p>
@@ -34,7 +33,7 @@ export function Layout238() {
             <div className="mb-5 md:mb-6">
               <FaVirusCovid className="size-12" color="#111f6acc" aria-label="Pruebas de COVID-19" />
             </div>
-            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl text-accent">
+            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl">
               Pruebas de COVID-19
             </h3>
             <p>
@@ -46,7 +45,7 @@ export function Layout238() {
             <div className="mb-5 md:mb-6">
               <PiCarProfileBold className="size-12" color="#111f6acc" aria-label="Servicio a Domicilio" />
             </div>
-            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl text-accent">
+            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl">
               Servicio a Domicilio
             </h3>
             <p>Facilitamos la toma de muestras en la comodidad de tu hogar.</p>

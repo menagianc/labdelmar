@@ -167,18 +167,7 @@ export function LabLocations() {
   );
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="w-full max-w-lg mb-12">
-          <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
-            Sucursales
-          </h1>
-          <p className="md:text-md">
-            Descubre nuestras sucursales en Vega Baja y Manatí, donde la salud
-            es prioridad.
-          </p>
-        </div>
-
+    <section id="relume" className="section section-light px-[5%] py-16 md:py-24 lg:py-28">
         {/* Vega Baja Section */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-6 border-b pb-2">Vega Baja</h2>
@@ -194,7 +183,6 @@ export function LabLocations() {
             {manatiLabs.map(renderLabCard)}
           </div>
         </div>
-      </div>
     </section>
   );
 }
