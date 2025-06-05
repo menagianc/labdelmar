@@ -131,7 +131,7 @@ button[title="Llamar"]:hover {
   position: static;
 }
 
-[data-component-name="Navbar1"] .menu-content a::after {
+[data-component-name="Navbar1"] .menu-content a:not([href="tel:7878588362"]):not(button[title="Llamar"])::after {
   content: '';
   position: absolute;
   width: 0;
@@ -142,7 +142,7 @@ button[title="Llamar"]:hover {
   transition: width 0.3s ease;
 }
 
-[data-component-name="Navbar1"] .menu-content a:hover::after {
+[data-component-name="Navbar1"] .menu-content a:not([href="tel:7878588362"]):not(button[title="Llamar"]):hover::after {
   width: 100%;
 }
 
@@ -254,8 +254,9 @@ section.section-light h2,
 section.section-light h3,
 section.section-light h4,
 section.section-light h5,
-section.section-light h6 {
-  color: var(--section-light-heading) !important;
+section.section-light h6,
+section.section-light button.text-text-primary:not(:hover) {
+  color: var(--background-accent) !important;
 }
 
 .section-light a:not(.footer-underline):not(.nav-link) {
@@ -311,8 +312,8 @@ section.section-light h6 {
   border-color: var(--section-light-heading) !important;
 }
 
-button.text-text-primary:not(:hover) {
-  color: var(--section-light-heading) !important;
+.section-dark button.border-border-primary {
+  border-color: #fff !important;
 }
 
 button.text-text-primary:hover {
