@@ -105,10 +105,11 @@ button:not(.bg-background-alternative):active {
 }
 
 /* =========== Navbar Styles =========== */
-/* Override Relume UI Button border color */
-[data-component-name="Navbar1"] button[title="Llamar"],
-button[title="Llamar"] {
-  border-color: white;
+/* Override Relume UI Button border and text color */
+/* Override Relume UI Button border and text color */
+button[title="Llamar"].text-text-primary.border-border-primary:not(:hover) {
+  color: white !important;
+  border-color: white !important;
 }
 
 /* Custom hover for "Llamar" button: turquoise bg, no border */

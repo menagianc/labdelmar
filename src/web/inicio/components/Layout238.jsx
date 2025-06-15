@@ -2,7 +2,7 @@
 
 import React from "react";
 import { LuTestTubeDiagonal } from "react-icons/lu";
-import { PiCarProfileBold } from "react-icons/pi";
+
 import { FaVirusCovid } from "react-icons/fa6";
 
 export function Layout238() {
@@ -16,7 +16,7 @@ export function Layout238() {
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
+        <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
           <div className="flex flex-col items-center text-center">
             <div className="mb-5 md:mb-6">
               <LuTestTubeDiagonal className="size-12" color="#111f6acc" aria-label="Pruebas Regulares" />
@@ -41,15 +41,7 @@ export function Layout238() {
               moleculares de COVID-19.
             </p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-5 md:mb-6">
-              <PiCarProfileBold className="size-12" color="#111f6acc" aria-label="Servicio a Domicilio" />
-            </div>
-            <h3 className="mb-5 text-xl font-bold md:mb-6 md:text-2xl">
-              Servicio a Domicilio
-            </h3>
-            <p>Facilitamos la toma de muestras en la comodidad de tu hogar.</p>
-          </div>
+
         </div>
       </div>
     </section>

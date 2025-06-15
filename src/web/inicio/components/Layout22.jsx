@@ -3,6 +3,8 @@
 import { Button } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
+import domicilioImage from "../../../assets/labs/lab-2-1.jpg";
+import { Link } from "react-router-dom";
 
 export function Layout22() {
   return (
@@ -21,16 +23,18 @@ export function Layout22() {
             resultados.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+              <Link to="/domicilio">
               <Button title="Solicitar servicio" variant="secondary">
                 Solicitar servicio
               </Button>
+              </Link>
             </div>
           </div>
           <div>
             <img
-              src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
+              src={domicilioImage}
               className="w-full rounded-image object-cover"
-              alt="Relume placeholder image"
+              alt="Servicio a domicilio - Laboratorio Clínico del Mar"
             />
           </div>
         </div>

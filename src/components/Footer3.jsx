@@ -93,6 +93,9 @@ export function Footer3() {
                 <Link to="/sucursales" className="footer-underline text-white hover:text-white">Sucursales</Link>
               </li>
               <li className="py-2 text-sm font-semibold">
+                <Link to="/domicilio" className="footer-underline text-white hover:text-white">Domicilio</Link>
+              </li>
+              <li className="py-2 text-sm font-semibold">
                 <Link to="/contacto" className="footer-underline text-white hover:text-white">Contacto</Link>
               </li>
             </ul>

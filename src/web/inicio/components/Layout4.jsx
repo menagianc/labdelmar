@@ -9,6 +9,13 @@ export function Layout4() {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
+            <img
+              src={resultadosImage}
+              className="w-full rounded-image object-cover"
+              alt="Resultados de laboratorio"
+            />
+          </div>
+          <div>
             <h1 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl text-accent">
               Resultados rápidos y eficientes para ti.
             </h1>
@@ -35,13 +42,6 @@ export function Layout4() {
                 </p>
               </div>
             </div>
-          </div>
-          <div>
-            <img
-              src={resultadosImage}
-              className="w-full rounded-image object-cover"
-              alt="Resultados de laboratorio"
-            />
           </div>
         </div>
       </div>
